@@ -11,13 +11,11 @@ config_file = "config.json"
 
 with open(CONF_DIR+'\\'+config_file) as json_file:
     json_data = json.load(json_file)
-    MQTT_SERVER_ADDRESS = json_data['mqtt']['MQTT_SERVER_ADDRESS']
-    MQTT_SERVER_PORT = json_data['mqtt']['MQTT_SERVER_PORT']
-    MQTT_USERNAME = json_data['mqtt']['MQTT_USERNAME']
-    MQTT_PASSWORD = json_data['mqtt']['MQTT_PASSWORD']
+    MQTT_SERVER_ADDRESS = json_data['MQTT_SERVER']['MQTT_SERVER_ADDRESS']
+    MQTT_SERVER_PORT = json_data['MQTT_SERVER']['MQTT_SERVER_PORT']
+    MQTT_USERNAME = json_data['MQTT_SERVER']['MQTT_USERNAME']
+    MQTT_PASSWORD = json_data['MQTT_SERVER']['MQTT_PASSWORD']
 
-    CALDAV_SERVER_ADDRESS = json_data['caldav']['CALDAV_SERVER_ADDRESS']
-    CALDAV_USERNAME = json_data['caldav']['CALDAV_USERNAME']
-    CALDAV_PASSWORD = json_data['caldav']['CALDAV_PASSWORD']
-
-    TOPICS = json_data['topics']
+    CALDAV_SERVER_ADDRESS = json_data['CALDAV_SERVER']['CALDAV_SERVER_ADDRESS']
+    CALDAV_USERNAME = json_data['CALDAV_SERVER']['CALDAV_USERNAME']
+    CALDAV_PASSWORD = json_data['CALDAV_SERVER']['CALDAV_PASSWORD']

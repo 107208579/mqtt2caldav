@@ -1,14 +1,65 @@
 {
-  "mqtt":{
+  "MQTT_SERVER":{
     "MQTT_SERVER_ADDRESS": "localhost",
     "MQTT_SERVER_PORT": "1883",
     "MQTT_USERNAME": "administrator",
     "MQTT_PASSWORD": "password"
   },
-  "caldav":{
+
+  "CALDAV_SERVER":{
     "CALDAV_SERVER_ADDRESS": "localhost",
     "CALDAV_USERNAME": "administrator",
     "CALDAV_PASSWORD": "password"
   },
-  "topics":["mqtt/0x00124b001f8ab0cd", "mqtt/XiaoMi_Aqara_Square_Button_6"]
+
+  "Trigger_1": {
+      "MQTT_TOPIC":	"mqtt/0x00124b001f8ab0cd",
+      "MQTT_EVENT":	{"action":"single"},
+      "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/home/meetings/",
+      "EVENT_SUMMARY": "Meeting Awesome Inc",
+      "EVENT_LOCATION": "12 Main Road, 7344 Nowhere, Alaska",
+      "EVENT_GEO": "48.85299;2.36885",
+      "EVENT_CATEGORY": "Meeting",
+      "EVENT_URL": "http://example.com",
+      "EVENT_DESCRIPTION": "Meeting to discuss new product launches",
+      "EVENT_TIMEZONE": "Asia/Singapore",
+      "EVENT_TRIGGER": "15",
+      "EVENT_SECONDS": "False",
+      "EVENT_ROUNDING": "1",
+      "EVENT_DURATION": "10"
+    },
+
+  "Trigger_2": {
+      "MQTT_TOPIC":	"mqtt/0x00124b001f8ab0cd",
+      "MQTT_EVENT":	{"battery":"12"},
+      "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/alerts/",
+      "EVENT_SUMMARY": "System Alert",
+      "EVENT_LOCATION": "Maint Datacenter",
+      "EVENT_GEO": "48.85299;2.36885",
+      "EVENT_CATEGORY": "Alert",
+      "EVENT_URL": "",
+      "EVENT_DESCRIPTION": "Battery getting low",
+      "EVENT_TIMEZONE": "Asia/Singapore",
+      "EVENT_TRIGGER": "0",
+      "EVENT_SECONDS": "False",
+      "EVENT_ROUNDING": "0",
+      "EVENT_DURATION": "5"
+    },
+
+  "Trigger_3": {
+      "MQTT_TOPIC":	"mqtt/Ikea_Round_Remote_Control",
+      "MQTT_EVENT":	{"contact":"false"},
+      "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/contact_alerts/",
+      "EVENT_SUMMARY": "Contact False",
+      "EVENT_LOCATION": "Home",
+      "EVENT_GEO": "",
+      "EVENT_CATEGORY": "Alert",
+      "EVENT_URL": "",
+      "EVENT_DESCRIPTION": "Contact has switched to false",
+      "EVENT_TIMEZONE": "Asia/Singapore",
+      "EVENT_TRIGGER": "30",
+      "EVENT_SECONDS": "False",
+      "EVENT_ROUNDING": "5",
+      "EVENT_DURATION": "160"
+    }
 }
