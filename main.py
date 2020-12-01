@@ -13,11 +13,8 @@ def on_connect(client, userdata, flags, rc):
     if rc == 0:
         logger.info("Connected to broker")
         print("Connected to broker")
-        client.subscribe("topic/1")
-        client.subscribe("topic/2")
-        client.subscribe("topic/3")
-        client.subscribe("topic/4")
-
+        for topic in TOPICS:
+            client.subscribe(topic)
     else:
         logger.error("Connection failed")
         print("Connection failed")

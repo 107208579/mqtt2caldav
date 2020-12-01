@@ -19,3 +19,5 @@ with open(CONF_DIR+'\\'+config_file) as json_file:
     CALDAV_SERVER_ADDRESS = json_data['caldav']['CALDAV_SERVER_ADDRESS']
     CALDAV_USERNAME = json_data['caldav']['CALDAV_USERNAME']
     CALDAV_PASSWORD = json_data['caldav']['CALDAV_PASSWORD']
+
+    TOPICS = json_data['topics']
