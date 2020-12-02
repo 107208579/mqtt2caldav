@@ -13,8 +13,8 @@ def on_connect(client, userdata, flags, rc):
     if rc == 0:
         logger.info("Connected to broker")
         print("Connected to broker")
-        for topic in TOPICS:
-            client.subscribe(topic)
+        for trigger in TRIGGERS:
+            client.subscribe(trigger['MQTT_TOPIC'])
     else:
         logger.error("Connection failed")
         print("Connection failed")

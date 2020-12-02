@@ -12,7 +12,8 @@
     "CALDAV_PASSWORD": "password"
   },
 
-  "Trigger_1": {
+  "TRIGGERS": [
+    {
       "MQTT_TOPIC":	"mqtt/0x00124b001f8ab0cd",
       "MQTT_EVENT":	{"action":"single"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/home/meetings/",
@@ -29,7 +30,7 @@
       "EVENT_DURATION": "10"
     },
 
-  "Trigger_2": {
+    {
       "MQTT_TOPIC":	"mqtt/0x00124b001f8ab0cd",
       "MQTT_EVENT":	{"battery":"12"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/alerts/",
@@ -46,7 +47,7 @@
       "EVENT_DURATION": "5"
     },
 
-  "Trigger_3": {
+    {
       "MQTT_TOPIC":	"mqtt/Ikea_Round_Remote_Control",
       "MQTT_EVENT":	{"contact":"false"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/contact_alerts/",
@@ -62,4 +63,6 @@
       "EVENT_ROUNDING": "5",
       "EVENT_DURATION": "160"
     }
+  ]
+
 }
