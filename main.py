@@ -24,32 +24,36 @@ def on_message(client, userdata, message):
     logger.info("Message received : " + str(message.payload) + " on " + message.topic)
     print("Message received : " + str(message.payload) + " on " + message.topic)
     my_new_calendar = my_principal.make_calendar(name="Calendar")
-
-    # Let's add an event to our newly created calendar
-    my_event = my_new_calendar.save_event("""BEGIN:VCALENDAR
-    VERSION:2.0
-    PRODID:-//Script//EN
-    CALSCALE:GREGORIAN
-    BEGIN:VEVENT
-    DTSTART;TZID=Asia/Singapore:20201125T220000
-    DTEND;TZID=Asia/Singapore:20201125T230000
-    UID:D04A88A5-A56A-4FC9-BEDF-A064C18EEB83
-    DTSTAMP:20201125T140000Z
-    LOCATION:12 Main Road\, 7344 Nowhere\, Alaska
-    DESCRIPTION:Meeting to discuss new product launches
-    URL;VALUE=URI:http://example.com
-    SUMMARY:Meeting Awesome Inc
-    GEO:48.85299;2.36885
-    CATEGORY:Meeting
-    CREATED:20201125T140000Z
-    BEGIN:VALARM
-    TRIGGER:-PT15M
-    ATTACH;VALUE=URI:Chord
-    ACTION:AUDIO
-    END:VALARM
-    END:VEVENT
-    END:VCALENDAR
-    """)
+    for trigger in TRIGGERS:
+        if trigger['MQTT_TOPIC'] == message.topic:
+            str_event = """BEGIN:VCALENDAR
+            VERSION:2.0
+            PRODID:-//Script//EN
+            CALSCALE:GREGORIAN
+            BEGIN:VEVENT
+            DTSTART;TZID={timezone}:20201125T220000
+            DTEND;TZID={timezone}:20201125T230000
+            UID:D04A88A5-A56A-4FC9-BEDF-A064C18EEB83
+            DTSTAMP:20201125T140000Z
+            LOCATION:{location}
+            DESCRIPTION:{description}
+            URL;VALUE=URI:{url}
+            SUMMARY:{summary}
+            GEO:{geo}
+            CATEGORY:{category}
+            CREATED:20201125T140000Z
+            BEGIN:VALARM
+            TRIGGER:-PT{trigger_time}M
+            ATTACH;VALUE=URI:Chord
+            ACTION:AUDIO
+            END:VALARM
+            END:VEVENT
+            END:VCALENDAR
+            """
+            str_event = str_event.format(timezone=trigger['EVENT_TIMEZONE'], location=trigger['EVENT_LOCATION'], description=trigger['EVENT_DESCRIPTION'], url=trigger['EVENT_URL'],
+                                         summary=trigger['EVENT_SUMMARY'], geo=trigger['EVENT_GEO'], category=trigger['EVENT_CATEGORY'], trigger_time=trigger['EVENT_TRIGGER'])
+            # Let's add an event to our newly created calendar
+            my_event = my_new_calendar.save_event(str_event)
 
 
 if __name__ == '__main__':
