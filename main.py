@@ -31,19 +31,19 @@ def on_message(client, userdata, message):
             PRODID:-//Script//EN
             CALSCALE:GREGORIAN
             BEGIN:VEVENT
-            DTSTART;TZID={timezone}:20201125T220000
-            DTEND;TZID={timezone}:20201125T230000
+            DTSTART;TZID=Asia/Singapore:20201125T220000
+            DTEND;TZID=Asia/Singapore:20201125T230000
             UID:D04A88A5-A56A-4FC9-BEDF-A064C18EEB83
             DTSTAMP:20201125T140000Z
-            LOCATION:{location}
-            DESCRIPTION:{description}
-            URL;VALUE=URI:{url}
-            SUMMARY:{summary}
-            GEO:{geo}
-            CATEGORY:{category}
+            LOCATION:12 Main Road\, 7344 Nowhere\, Alaska
+            DESCRIPTION:Meeting to discuss new product launches
+            URL;VALUE=URI:http://example.com
+            SUMMARY:Meeting Awesome Inc
+            GEO:48.85299;2.36885
+            CATEGORY:Meeting
             CREATED:20201125T140000Z
             BEGIN:VALARM
-            TRIGGER:-PT{trigger_time}M
+            TRIGGER:-PT15M
             ATTACH;VALUE=URI:Chord
             ACTION:AUDIO
             END:VALARM
