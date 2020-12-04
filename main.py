@@ -73,7 +73,7 @@ if __name__ == '__main__':
     client.username_pw_set(MQTT_USERNAME, password=MQTT_PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect(MQTT_SERVER_ADDRESS, port=MQTT_SERVER_PORT)
+    client.connect(MQTT_SERVER_ADDRESS, port=int(MQTT_SERVER_PORT))
     client.loop_start()
 
     try:
