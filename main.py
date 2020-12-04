@@ -69,8 +69,8 @@ if __name__ == '__main__':
         print("your principal has no calendars")
 
     # MQTT Broker Connection
-    mqttClient.username_pw_set(MQTT_USERNAME, password=MQTT_PASSWORD)
     client = mqttClient.Client("Python")
+    client.username_pw_set(MQTT_USERNAME, password=MQTT_PASSWORD)
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect(MQTT_SERVER_ADDRESS, port=MQTT_SERVER_PORT)

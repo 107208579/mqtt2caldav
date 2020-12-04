@@ -9,7 +9,7 @@ CONF_DIR = os.path.join(ROOT_DIR, 'config')
 config_file = "config.json"
 
 
-with open(CONF_DIR+'\\'+config_file) as json_file:
+with open(CONF_DIR+'/'+config_file) as json_file:
     json_data = json.load(json_file)
     MQTT_SERVER_ADDRESS = json_data['MQTT_SERVER']['MQTT_SERVER_ADDRESS']
     MQTT_SERVER_PORT = json_data['MQTT_SERVER']['MQTT_SERVER_PORT']
