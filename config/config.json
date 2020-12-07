@@ -62,6 +62,19 @@
       "EVENT_SECONDS": "False",
       "EVENT_ROUNDING": "5",
       "EVENT_DURATION": "160"
+    },
+
+    {
+      "MQTT_TOPIC": "mqtt/Ikea_Square_Button",
+      "MQTT_EVENT": {"action":"off"},
+      "EVENT_CALENDAR": "https://nex.nux.one/remote.php/dav/calendars/ros/test/",
+      "EVENT_SUMMARY": "Ikea_Square_Button Off",
+      "EVENT_LOCATION": "1 Test Street, 23456 Test, Test",
+      "EVENT_GEO": "48.85299;2.36885",
+      "EVENT_CATEGORY": "Meeting",
+      "EVENT_URL": "http://test.com",
+      "EVENT_DESCRIPTION": "Test",
+      "EVENT_TIMEZONE": "Asia/Singapore"
     }
   ]
 
