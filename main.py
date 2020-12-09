@@ -27,6 +27,8 @@ def on_message(client, userdata, message):
     mqtt_event = message.payload.decode('ASCII')
     for trigger in TRIGGERS:
         if trigger['MQTT_TOPIC'] == message.topic and trigger['MQTT_EVENT'] == mqtt_event:
+            print("Mqtt event matched with trigger one.")
+            logger.info("Mqtt event matched with trigger one.")
             now_datetime = datetime.now()
             end_datetime = now_datetime + timedelta(minutes=int(trigger['EVENT_DURATION']))
             if trigger['EVENT_SECONDS'] == 'False' or trigger['EVENT_SECONDS'] == 'false':
