@@ -22,7 +22,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, message):
     logger.info("Message received : " + str(message.payload) + " on " + message.topic)
-    print("Message received : " + str(message.payload) + " on " + message.topic)
+    print("Message received : " + message.payload.decode('ASCII') + " on " + message.topic)
     # my_new_calendar = my_principal.make_calendar(name="Calendar")
     mqtt_event = message.payload.decode('ASCII')
     for trigger in TRIGGERS:
