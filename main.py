@@ -26,7 +26,7 @@ def on_message(client, userdata, message):
     # my_new_calendar = my_principal.make_calendar(name="Calendar")
     mqtt_event = message.payload.decode('ASCII')
     for trigger in TRIGGERS:
-        if trigger['MQTT_TOPIC'] == message.topic and trigger['MQTT_EVENT'] == mqtt_event:
+        if trigger['MQTT_TOPIC'] == message.topic and trigger['MQTT_EVENT'] in mqtt_event:
             print("Mqtt event matched with trigger one.")
             logger.info("Mqtt event matched with trigger one.")
             now_datetime = datetime.now()
