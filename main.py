@@ -39,33 +39,35 @@ def on_message(client, userdata, message):
                 start_time = now_datetime.strftime('%Y%m%dT%H%M%S')
                 end_time = end_datetime.strftime('%Y%m%dT%H%M%S')
             event_calendar = caldav.Calendar(client=cal_client, url=trigger['EVENT_CALENDAR'])
-            str_event = """BEGIN:VCALENDAR
+            str_event = """
+            BEGIN:VCALENDAR
             VERSION:2.0
             PRODID:-//Script//EN
             CALSCALE:GREGORIAN
             BEGIN:VEVENT
-            DTSTART;TZID={timezone}:{start_time}
-            DTEND;TZID={timezone}:{end_time}
+            DTSTART;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+start_time+"""
+            DTEND;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+end_time+"""
             UID:D04A88A5-A56A-4FC9-BEDF-A064C18EEB83
-            DTSTAMP:{start_time}
-            LOCATION:{location}
-            DESCRIPTION:{description}
-            URL;VALUE=URI:{url}
-            SUMMARY:{summary}
-            GEO:{geo}
-            CATEGORY:{category}
-            CREATED:{created_time}
+            DTSTAMP:"""+start_time+"""
+            LOCATION:"""+trigger['EVENT_LOCATION']+"""
+            DESCRIPTION:"""+trigger['EVENT_DESCRIPTION']+"""
+            URL;VALUE=URI:"""+trigger['EVENT_URL']+"""
+            SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
+            GEO:"""+trigger['EVENT_GEO']+"""
+            CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
+            CREATED:"""+start_time+"""
             BEGIN:VALARM
-            TRIGGER:-PT{trigger_time}M
+            TRIGGER:-PT"""+trigger['EVENT_TRIGGER']+"""M
             ATTACH;VALUE=URI:Chord
             ACTION:AUDIO
             END:VALARM
             END:VEVENT
             END:VCALENDAR
             """
-            str_event = str_event.format(timezone=trigger['EVENT_TIMEZONE'], location=trigger['EVENT_LOCATION'], description=trigger['EVENT_DESCRIPTION'], url=trigger['EVENT_URL'],
-                                         summary=trigger['EVENT_SUMMARY'], geo=trigger['EVENT_GEO'], category=trigger['EVENT_CATEGORY'], created_time=start_time, trigger_time=trigger['EVENT_TRIGGER'],
-                                         start_time=start_time, end_time=end_time)
+
+            # str_event = str_event.format(timezone=trigger['EVENT_TIMEZONE'], location=trigger['EVENT_LOCATION'], description=trigger['EVENT_DESCRIPTION'], url=trigger['EVENT_URL'],
+            #                              summary=trigger['EVENT_SUMMARY'], geo=trigger['EVENT_GEO'], category=trigger['EVENT_CATEGORY'], created_time=start_time, trigger_time=trigger['EVENT_TRIGGER'],
+            #                              start_time=start_time, end_time=end_time)
             # Let's add an event to our newly created calendar
             my_event = event_calendar.save_event(str_event)
 
