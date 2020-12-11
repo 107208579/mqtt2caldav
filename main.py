@@ -39,7 +39,7 @@ def on_message(client, userdata, message):
                 start_time = now_datetime.strftime('%Y%m%dT%H%M%S')
                 end_time = end_datetime.strftime('%Y%m%dT%H%M%S')
             event_calendar = caldav.Calendar(client=cal_client, url=trigger['EVENT_CALENDAR'])
-            str_event = """
+            main_event = """
             BEGIN:VCALENDAR
             VERSION:2.0
             PRODID:-//Script//EN
@@ -47,7 +47,6 @@ def on_message(client, userdata, message):
             BEGIN:VEVENT
             DTSTART;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+start_time+"""
             DTEND;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+end_time+"""
-            UID:D04A88A5-A56A-4FC9-BEDF-A064C18EEB83
             DTSTAMP:"""+start_time+"""
             LOCATION:"""+trigger['EVENT_LOCATION']+"""
             DESCRIPTION:"""+trigger['EVENT_DESCRIPTION']+"""
@@ -55,15 +54,22 @@ def on_message(client, userdata, message):
             SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
             GEO:"""+trigger['EVENT_GEO']+"""
             CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
-            CREATED:"""+start_time+"""
-            BEGIN:VALARM
-            TRIGGER:-PT"""+trigger['EVENT_TRIGGER']+"""M
-            ATTACH;VALUE=URI:Chord
-            ACTION:AUDIO
-            END:VALARM
+            CREATED:"""+start_time
+            end_event = """
             END:VEVENT
             END:VCALENDAR
             """
+            if trigger['EVENT_TRIGGER'] == '':
+                str_event = main_event + end_event
+            else:
+                alarm_event = """
+                BEGIN:VALARM
+                TRIGGER:-PT"""+trigger['EVENT_TRIGGER']+"""M
+                ATTACH;VALUE=URI:Chord
+                ACTION:AUDIO
+                END:VALARM
+                """
+                str_event = main_event + alarm_event + end_event
 
             # str_event = str_event.format(timezone=trigger['EVENT_TIMEZONE'], location=trigger['EVENT_LOCATION'], description=trigger['EVENT_DESCRIPTION'], url=trigger['EVENT_URL'],
             #                              summary=trigger['EVENT_SUMMARY'], geo=trigger['EVENT_GEO'], category=trigger['EVENT_CATEGORY'], created_time=start_time, trigger_time=trigger['EVENT_TRIGGER'],
