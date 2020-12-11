@@ -10,6 +10,23 @@ import utils.logger as logger
 import json
 
 
+def roundTime(dt=None, dateDelta=timedelta(minutes=1)):
+    """Round a datetime object to a multiple of a timedelta
+    dt : datetime.datetime object, default now.
+    dateDelta : timedelta object, we round to a multiple of this, default 1 minute.
+    Author: Thierry Husson 2012 - Use it as you want but don't blame me.
+            Stijn Nevens 2014 - Changed to use only datetime objects as variables
+    """
+    roundTo = dateDelta.total_seconds()
+
+    if dt is None:
+        dt = datetime.datetime.now()
+    seconds = (dt - dt.min).seconds
+    # // is a floor division, not a comment on following line:
+    rounding = (seconds+roundTo/2) // roundTo * roundTo
+    return dt + timedelta(0, rounding-seconds, -dt.microsecond)
+
+
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         logger.info("Connected to broker")
@@ -30,7 +47,7 @@ def on_message(client, userdata, message):
         if trigger['MQTT_TOPIC'] == message.topic and all((k in mqtt_event and mqtt_event[k] == v) for k, v in trigger['MQTT_EVENT'].items()):
             print("Mqtt event matched with trigger one.")
             logger.info("Mqtt event matched with trigger one.")
-            now_datetime = datetime.now()
+            now_datetime = roundTime(datetime.now(), timedelta(minutes=int(trigger['EVENT_ROUNDING'])))
             end_datetime = now_datetime + timedelta(minutes=int(trigger['EVENT_DURATION']))
             if trigger['EVENT_SECONDS'] == 'False' or trigger['EVENT_SECONDS'] == 'false':
                 start_time = now_datetime.strftime('%Y%m%dT%H%M00')
@@ -108,3 +125,6 @@ if __name__ == '__main__':
         print("exiting")
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
+
+# if __name__ == '__main__':
+#     print(roundTime(datetime.now(), timedelta(minutes=5)))
