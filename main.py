@@ -40,35 +40,35 @@ def on_message(client, userdata, message):
                 end_time = end_datetime.strftime('%Y%m%dT%H%M%S')
             event_calendar = caldav.Calendar(client=cal_client, url=trigger['EVENT_CALENDAR'])
             main_event = """
-            BEGIN:VCALENDAR
-            VERSION:2.0
-            PRODID:-//Script//EN
-            CALSCALE:GREGORIAN
-            BEGIN:VEVENT
-            DTSTART;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+start_time+"""
-            DTEND;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+end_time+"""
-            DTSTAMP:"""+start_time+"""
-            LOCATION:"""+trigger['EVENT_LOCATION']+"""
-            DESCRIPTION:"""+trigger['EVENT_DESCRIPTION']+"""
-            URL;VALUE=URI:"""+trigger['EVENT_URL']+"""
-            SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
-            GEO:"""+trigger['EVENT_GEO']+"""
-            CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
-            CREATED:"""+start_time
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Script//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTART;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+start_time+"""
+DTEND;TZID="""+trigger['EVENT_TIMEZONE']+""":"""+end_time+"""
+DTSTAMP:"""+start_time+"""
+LOCATION:"""+trigger['EVENT_LOCATION']+"""
+DESCRIPTION:"""+trigger['EVENT_DESCRIPTION']+"""
+URL;VALUE=URI:"""+trigger['EVENT_URL']+"""
+SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
+GEO:"""+trigger['EVENT_GEO']+"""
+CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
+CREATED:"""+start_time
             end_event = """
-            END:VEVENT
-            END:VCALENDAR
-            """
+END:VEVENT
+END:VCALENDAR
+"""
             if trigger['EVENT_TRIGGER'] == '':
                 str_event = main_event + end_event
             else:
                 alarm_event = """
-                BEGIN:VALARM
-                TRIGGER:-PT"""+trigger['EVENT_TRIGGER']+"""M
-                ATTACH;VALUE=URI:Chord
-                ACTION:AUDIO
-                END:VALARM
-                """
+BEGIN:VALARM
+TRIGGER:-PT"""+trigger['EVENT_TRIGGER']+"""M
+ATTACH;VALUE=URI:Chord
+ACTION:AUDIO
+END:VALARM
+"""
                 str_event = main_event + alarm_event + end_event
 
             # str_event = str_event.format(timezone=trigger['EVENT_TIMEZONE'], location=trigger['EVENT_LOCATION'], description=trigger['EVENT_DESCRIPTION'], url=trigger['EVENT_URL'],
