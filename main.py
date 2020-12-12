@@ -47,6 +47,8 @@ def on_message(client, userdata, message):
         if trigger['MQTT_TOPIC'] == message.topic and all((k in mqtt_event and mqtt_event[k] == v) for k, v in trigger['MQTT_EVENT'].items()):
             print("Mqtt event matched with trigger one.")
             logger.info("Mqtt event matched with trigger one.")
+            if trigger['EVENT_ROUNDING'] == '':
+                trigger['EVENT_ROUNDING'] = '0'
             now_datetime = roundTime(datetime.now(), timedelta(minutes=int(trigger['EVENT_ROUNDING'])))
             end_datetime = now_datetime + timedelta(minutes=int(trigger['EVENT_DURATION']))
             if trigger['EVENT_SECONDS'] == 'False' or trigger['EVENT_SECONDS'] == 'false':
