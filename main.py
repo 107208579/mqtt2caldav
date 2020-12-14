@@ -101,15 +101,20 @@ END:VALARM
 if __name__ == '__main__':
     # CALDAV Server Connection
     global cal_client
-    cal_client = caldav.DAVClient(url=CALDAV_SERVER_ADDRESS, username=CALDAV_USERNAME, password=CALDAV_PASSWORD)
-    my_principal = cal_client.principal()
-    calendars = my_principal.calendars()
-    if calendars:
-        print("your principal has %i calendars:" % len(calendars))
-        for c in calendars:
-            print("Name: %-20s  URL: %s" % (c.name, c.url))
-    else:
-        print("your principal has no calendars")
+    try:
+        cal_client = caldav.DAVClient(url=CALDAV_SERVER_ADDRESS, username=CALDAV_USERNAME, password=CALDAV_PASSWORD)
+        my_principal = cal_client.principal()
+        calendars = my_principal.calendars()
+        if calendars:
+            print("your principal has %i calendars:" % len(calendars))
+            for c in calendars:
+                print("Name: %-20s  URL: %s" % (c.name, c.url))
+        else:
+            print("your principal has no calendars")
+    except Exception as error:
+        logger.error(error)
+        print('caldav error: ' + error)
+        exit(1)
 
     # MQTT Broker Connection
     mqtt_client = mqttClient.Client("Python")
