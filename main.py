@@ -5,6 +5,8 @@ import time
 from datetime import datetime, timedelta
 import sys
 import caldav
+from caldav.lib.error import AuthorizationError
+
 from utils.constants import *
 import utils.logger as logger
 import json
@@ -111,9 +113,9 @@ if __name__ == '__main__':
                 print("Name: %-20s  URL: %s" % (c.name, c.url))
         else:
             print("your principal has no calendars")
-    except Exception as error:
-        logger.error(error)
-        print('caldav error: ' + error)
+    except AuthorizationError:
+        logger.error('incorrect CALDAV details')
+        print('caldav error: incorrect CALDAV details')
         exit(1)
 
     # MQTT Broker Connection
