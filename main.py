@@ -5,11 +5,11 @@ import sys
 import json
 import time
 import caldav
+from utils.constants import *
 import utils.logger as logger
 import paho.mqtt.client as mqttClient
 from datetime import datetime, timedelta
 from caldav.lib.error import AuthorizationError
-from utils.constants import *
 
 
 
@@ -102,8 +102,8 @@ END:VALARM
 if __name__ == '__main__':
 
 
-
-### VARIABLE :: Connect CalDAV Client ##################################################
+    
+### Connect CalDAV Client ##############################################################
     global cal_client
     try:
         cal_client = caldav.DAVClient(url=CALDAV_SERVER_ADDRESS, username=CALDAV_USERNAME, password=CALDAV_PASSWORD)
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 
 
 
-### VARIABLE :: Manage MQTT Connection #################################################
+### Manage MQTT Connection #############################################################
     mqtt_client = mqttClient.Client("Python")
     mqtt_client.username_pw_set(MQTT_USERNAME, password=MQTT_PASSWORD)
     mqtt_client.on_connect = on_connect
