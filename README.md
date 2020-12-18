@@ -4,11 +4,13 @@ Converts an MQTT event to a CalDAV event.
 <br />
 <br />
 
+
 ## Requirements  
 * MQTT Broker Connection
 * CalDAV Server Connection
 <br />
 <br />
+
 
 ## Configuration
 **MQTT Server**  
@@ -20,6 +22,7 @@ Converts an MQTT event to a CalDAV event.
  ```
 <br />
 
+
 **CalDAV Server** 
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
@@ -28,12 +31,14 @@ Converts an MQTT event to a CalDAV event.
  ```
 <br />
 
+
 **MQTT Trigger**   
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
 ```
 <br />
+
 
 **Event Details**  
 ```
@@ -47,6 +52,7 @@ Converts an MQTT event to a CalDAV event.
 ```
 <br />
 
+
 **Event Details**  
 Specifies the time zone in which events should be created.
 * List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -55,9 +61,10 @@ Specifies the time zone in which events should be created.
 ```
 <br />
  
+ 
 **Event Details :: Trigger**  
 Specifies if and when when an event alarm will trigger.  
-* "" → No alert will be configured or set  
+* "" → No alert will be configured  
 * "0" → Alert will trigger at event start time (DTSTART)  
 * "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
 * ...
@@ -65,6 +72,7 @@ Specifies if and when when an event alarm will trigger.
 "EVENT_TRIGGER": "15",
 ```
 <br />
+
 
 **Event Details :: Seconds**  
 Specifies if event start time (DTSTART) and event end time (DTEND) should have seconds set or default to '00'.  
@@ -74,6 +82,7 @@ Specifies if event start time (DTSTART) and event end time (DTEND) should have s
 "EVENT_SECONDS": "True",
 ```
 <br />
+
 
 **Event Details :: Rounding**  
 Specifies if the event start time (DTSTART) should have minutes rounded to the closest defined value.
@@ -85,6 +94,7 @@ Specifies if the event start time (DTSTART) should have minutes rounded to the c
 "EVENT_ROUNDING": "5",
 ```
 <br />
+
 
 **Event Details :: Duration**  
 Specifies the event duration in minutes.
