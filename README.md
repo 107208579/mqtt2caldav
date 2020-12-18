@@ -1,16 +1,17 @@
-# mqtt2caldav
+# mqtt2caldav  
 Converts an MQTT event to a CalDAV event.
 <br />
 <br />
+<br />
 
-## Requirements
+## Requirements  
 * MQTT Broker Connection
 * CalDAV Server Connection
 <br />
 <br />
 
 ## Configuration
-**MQTT Server**
+**MQTT Server**  
 ```
 "MQTT_SERVER_ADDRESS": "localhost",
 "MQTT_SERVER_PORT": "1883",
@@ -19,7 +20,7 @@ Converts an MQTT event to a CalDAV event.
  ```
 <br />
 
-**CalDAV Server**
+**CalDAV Server** 
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
 "CALDAV_USERNAME": "username",
@@ -27,7 +28,7 @@ Converts an MQTT event to a CalDAV event.
  ```
 <br />
 
-**MQTT Trigger**  
+**MQTT Trigger**   
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
@@ -48,7 +49,7 @@ Converts an MQTT event to a CalDAV event.
 
 **Event Details**  
 Specifies the time zone in which events should be created.
-* https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+* List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
 "EVENT_TIMEZONE": "Asia/Singapore",
 ```
