@@ -1,5 +1,5 @@
 # mqtt2caldav  
-Converts an MQTT event to a CalDAV event.
+This project onverts an MQTT event to a predefined CalDAV event.
 <br />
 <br />
 <br />
