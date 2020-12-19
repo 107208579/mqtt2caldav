@@ -62,7 +62,7 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 <br />
 
 
-**Event Details**  
+**Event Details :: Time Zone**  
 Specifies the time zone in which events should be created.
 * List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
@@ -73,7 +73,7 @@ Specifies the time zone in which events should be created.
  
 **Event Details :: Trigger**  
 Specifies if and when when an event alarm will trigger.  
-* "" → No alert will be configured  
+* "" → No alert will be set or configured  
 * "0" → Alert will trigger at event start time (DTSTART)  
 * "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
 * ...
