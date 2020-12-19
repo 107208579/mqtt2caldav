@@ -15,7 +15,7 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 
 
 ## Requirements  
-* MQTT Broker Connection
+* MQTT Server Connection
 * CalDAV Server Connection
 <br />
 <br />
