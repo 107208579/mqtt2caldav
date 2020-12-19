@@ -7,7 +7,7 @@ This project converts MQTT events to predefined CalDAV events.
 
 
 ## Licences 
-mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https://github.com/python-caldav/caldav/blob/master/COPYING.GPL).
+mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https://github.com/107208579/mqtt2caldav/blob/main/LICENSE.gpl).
 <br />
 <br />
 
