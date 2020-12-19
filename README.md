@@ -1,8 +1,16 @@
 # mqtt2caldav  
-This project onverts an MQTT event to a predefined CalDAV event.
+This project converts MQTT events to predefined CalDAV events.
 <br />
 <br />
 <br />
+
+
+
+## Licences 
+mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https://github.com/python-caldav/caldav/blob/master/COPYING.GPL).
+<br />
+<br />
+
 
 
 ## Requirements  
