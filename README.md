@@ -1,4 +1,4 @@
-<img src="mqtt2caldav.png" width="280" height="140">  
+<img src="mqtt2caldav.png" width="300" height="150">  
 <br />
 <br />
 
