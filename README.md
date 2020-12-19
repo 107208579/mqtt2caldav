@@ -1,8 +1,5 @@
-<img src="mqtt2caldav.png" width="300" height="150">  
+<img src="mqtt2caldav.png" width="300" height="131">  
 <br />
-<br />
-
-
 
 # mqtt2caldav  
 This project converts MQTT events to predefined CalDAV events.  
