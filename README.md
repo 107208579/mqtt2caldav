@@ -24,8 +24,8 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 
 
 ## Configuration  
-Specifies the MQTT server connection.
 **MQTT Server**  
+Specifies the MQTT server connection.
 ```
 "MQTT_SERVER_ADDRESS": "localhost",
 "MQTT_SERVER_PORT": "1883",
