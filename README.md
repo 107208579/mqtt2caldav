@@ -46,7 +46,7 @@ Specifies the CalDAV server connection.
 
 
 **MQTT Trigger**   
-Specifies the MQTT topic and event details.
+Specifies the MQTT topic and event action to trigger an event creation.
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
@@ -55,7 +55,7 @@ Specifies the MQTT topic and event details.
 
 
 **Event Details**  
-Specifies the calendar event details.
+Specifies details of the calendar event.
 ```
 "EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
 "EVENT_SUMMARY": "Buy Milk",
@@ -69,7 +69,7 @@ Specifies the calendar event details.
 
 
 **Event Details :: Time Zone**  
-Specifies the time zone in which events should be created.
+Specifies the time zone in which events are created.
 * List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
 "EVENT_TIMEZONE": "Asia/Singapore",
@@ -78,7 +78,7 @@ Specifies the time zone in which events should be created.
  
  
 **Event Details :: Trigger**  
-Specifies if and when when an event alarm will trigger.  
+Specifies if and when when an event alarm triggers.  
 * "" → No alert will be set or configured  
 * "0" → Alert will trigger at event start time (DTSTART)  
 * "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
@@ -90,7 +90,7 @@ Specifies if and when when an event alarm will trigger.
 
 
 **Event Details :: Seconds**  
-Specifies if event start time (DTSTART) and event end time (DTEND) should have seconds set or default to '00'.  
+Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set or default to '00'.  
 * "True" → 12:34:56  
 * "False" → 12:34:00   
 ```
@@ -100,7 +100,7 @@ Specifies if event start time (DTSTART) and event end time (DTEND) should have s
 
 
 **Event Details :: Rounding**  
-Specifies if the event start time (DTSTART) should have minutes rounded to the closest defined value.
+Specifies if the event start time (DTSTART) has minutes rounded to the closest defined value.
 * "1" → 12:42:29 rounds to 12:42:00 and 12:42:30 rounds to 12:43:00
 * "5" → 12:42:29 rounds to 12:40:00 and 12:42:30 rounds to 12:45:00 
 * "30" → 12:42:29 rounds to 12:30:00 and 12:42:30 rounds to 13:00:00
