@@ -23,7 +23,8 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 <br />
 
 
-## Configuration
+## Configuration  
+Specifies the MQTT server connection.
 **MQTT Server**  
 ```
 "MQTT_SERVER_ADDRESS": "localhost",
@@ -34,7 +35,8 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 <br />
 
 
-**CalDAV Server** 
+**CalDAV Server**  
+Specifies the CalDAV server connection.
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
 "CALDAV_USERNAME": "username",
@@ -44,6 +46,7 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 
 
 **MQTT Trigger**   
+Specifies the MQTT topic and event details.
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
@@ -52,6 +55,7 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 
 
 **Event Details**  
+Specifies the calendar event details.
 ```
 "EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
 "EVENT_SUMMARY": "Buy Milk",
