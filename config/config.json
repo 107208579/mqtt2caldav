@@ -18,7 +18,7 @@
       "MQTT_EVENT":	{"action":"single"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/home/meetings/",
       "EVENT_SUMMARY": "Meeting Awesome Inc",
-      "EVENT_LOCATION": "12 Main Road, 7344 Nowhere, Alaska",
+      "EVENT_LOCATION": "12 Main Road\\, 7344 Nowhere\\, Alaska",
       "EVENT_GEO": "48.85299;2.36885",
       "EVENT_CATEGORY": "Meeting",
       "EVENT_URL": "http://example.com",
@@ -35,7 +35,7 @@
       "MQTT_EVENT":	{"battery":"12"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/alerts/",
       "EVENT_SUMMARY": "System Alert",
-      "EVENT_LOCATION": "Maint Datacenter",
+      "EVENT_LOCATION": "Main Datacenter",
       "EVENT_GEO": "48.85299;2.36885",
       "EVENT_CATEGORY": "Alert",
       "EVENT_URL": "",
@@ -69,7 +69,7 @@
       "MQTT_EVENT": {"action":"off"},
       "EVENT_CALENDAR": "https://nex.nux.one/remote.php/dav/calendars/ros/test/",
       "EVENT_SUMMARY": "Ikea_Square_Button Off",
-      "EVENT_LOCATION": "1 Test Street, 23456 Test, Test",
+      "EVENT_LOCATION": "1 Test Street\\, 23456 Test\\, Test",
       "EVENT_GEO": "48.85299;2.36885",
       "EVENT_CATEGORY": "Meeting",
       "EVENT_URL": "http://test.com",
@@ -77,5 +77,4 @@
       "EVENT_TIMEZONE": "Asia/Singapore"
     }
   ]
-
 }
