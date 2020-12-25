@@ -90,7 +90,7 @@ Specifies if and when when an event alarm triggers.
 
 
 **Event Details :: Seconds**  
-Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set or default to '00'.  
+Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set.  
 * "True" → 12:34:56  
 * "False" → 12:34:00   
 ```
