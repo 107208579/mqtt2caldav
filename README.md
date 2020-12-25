@@ -33,6 +33,7 @@ Specifies the MQTT server connection.
 "MQTT_PASSWORD": "password"
  ```
 <br />
+<br />
 
 
 **CalDAV Server**  
@@ -43,6 +44,7 @@ Specifies the CalDAV server connection.
 "CALDAV_PASSWORD": "password"
  ```
 <br />
+<br />
 
 
 **MQTT Trigger**   
@@ -51,6 +53,7 @@ Specifies the MQTT topic and event action to trigger an event creation.
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
 ```
+<br />
 <br />
 
 
@@ -66,6 +69,7 @@ Specifies details of the calendar event.
 "EVENT_DESCRIPTION": "Dont forget to buy fresh milk!",
 ```
 <br />
+<br />
 
 
 **Event Details :: Time Zone**  
@@ -74,6 +78,7 @@ Specifies the time zone in which events are created.
 "EVENT_TIMEZONE": "Asia/Singapore",
 ```
 * List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
+<br />
 <br />
  
  
@@ -87,6 +92,7 @@ Specifies if and when when an event alarm triggers.
 * "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
 * ...
 <br />
+<br />
 
 
 **Event Details :: Seconds**  
@@ -96,6 +102,7 @@ Specifies if event start time (DTSTART) and event end time (DTEND) will have sec
 ```
 * "True" → 12:34:56  
 * "False" → 12:34:00   
+<br />
 <br />
 
 
@@ -109,6 +116,7 @@ Specifies if the event start time (DTSTART) has minutes rounded to the closest d
 * "30" → 12:42:29 rounds to 12:30:00 and 12:42:30 rounds to 13:00:00
 * ...
 <br />
+<br />
 
 
 **Event Details :: Duration**  
@@ -120,4 +128,5 @@ Specifies the event duration in minutes.
 * "10" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 12:44:00
 * "120" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 14:34:00
 * ...
+<br />
 <br />
