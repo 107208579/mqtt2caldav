@@ -70,54 +70,54 @@ Specifies details of the calendar event.
 
 **Event Details :: Time Zone**  
 Specifies the time zone in which events are created.
-* List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
 "EVENT_TIMEZONE": "Asia/Singapore",
 ```
+* List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 <br />
  
  
 **Event Details :: Trigger**  
-Specifies if and when when an event alarm triggers.  
+Specifies if and when when an event alarm triggers.
+```
+"EVENT_TRIGGER": "15",
+```
 * "" → No alert will be set or configured  
 * "0" → Alert will trigger at event start time (DTSTART)  
 * "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
 * ...
-```
-"EVENT_TRIGGER": "15",
-```
 <br />
 
 
 **Event Details :: Seconds**  
-Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set.  
-* "True" → 12:34:56  
-* "False" → 12:34:00   
+Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set.
 ```
 "EVENT_SECONDS": "True",
 ```
+* "True" → 12:34:56  
+* "False" → 12:34:00   
 <br />
 
 
 **Event Details :: Rounding**  
 Specifies if the event start time (DTSTART) has minutes rounded to the closest defined value.
+```
+"EVENT_ROUNDING": "5",
+```
 * "1" → 12:42:29 rounds to 12:42:00 and 12:42:30 rounds to 12:43:00
 * "5" → 12:42:29 rounds to 12:40:00 and 12:42:30 rounds to 12:45:00 
 * "30" → 12:42:29 rounds to 12:30:00 and 12:42:30 rounds to 13:00:00
 * ...
-```
-"EVENT_ROUNDING": "5",
-```
 <br />
 
 
 **Event Details :: Duration**  
 Specifies the event duration in minutes.
+```
+"EVENT_DURATION": "10",
+```
 * "1" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 12:35:00
 * "10" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 12:44:00
 * "120" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 14:34:00
 * ...
-```
-"EVENT_DURATION": "10",
-```
 <br />
