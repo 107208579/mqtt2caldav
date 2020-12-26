@@ -1,7 +1,7 @@
 <img src="mqtt2caldav.png" width="300" height="131">  
 
 # mqtt2caldav  
-This project reads MQTT events and creates predefined CalDAV events.  
+This project reads MQTT events and creates predefined CALDAV events.  
 <br />
 <br />
 <br />
@@ -18,7 +18,7 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 
 ## Requirements  
 * MQTT Server Connection
-* CalDAV Server Connection
+* CALDAV Server Connection
 <br />
 <br />
 
@@ -83,7 +83,7 @@ Specifies the time zone in which events are created.
  
  
 **EVENT Details :: Trigger**  
-Specifies if and when when an event alarm triggers.
+Specifies an event alarm trigger.
 ```
 "EVENT_TRIGGER": "15",
 ```
