@@ -5,11 +5,11 @@ import sys
 import json
 import time
 import caldav
-from utils.constants import *
+from caldav.lib.error import AuthorizationError
 import utils.logger as logger
+from utils.constants import *
 import paho.mqtt.client as mqttClient
 from datetime import datetime, timedelta
-from caldav.lib.error import AuthorizationError
 
 
 
