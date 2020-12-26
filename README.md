@@ -107,7 +107,7 @@ Specifies if event start time (DTSTART) and event end time (DTEND) will have sec
 
 
 **EVENT Details :: Rounding**  
-Specifies if the event start time (DTSTART) has minutes rounded to the closest defined value.
+Specifies if the event start time (DTSTART) has minutes rounded up or down to the closest defined value.
 ```
 "EVENT_ROUNDING": "5",
 ```
