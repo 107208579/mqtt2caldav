@@ -14,8 +14,8 @@
 
   "TRIGGERS": [
     {
-      "MQTT_TOPIC":	"mqtt/0x00124b001f8ab0cd",
-      "MQTT_EVENT":	{"action":"single"},
+      "MQTT_TOPIC": "mqtt/0x00124b001f8ab0cd",
+      "MQTT_EVENT": {"action":"single"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/home/meetings/",
       "EVENT_SUMMARY": "Meeting Awesome Inc",
       "EVENT_LOCATION": "12 Main Road\\, 3456 Town\\, Antarctica",
@@ -31,8 +31,8 @@
     },
 
     {
-      "MQTT_TOPIC":	"mqtt/Switch",
-      "MQTT_EVENT":	{"battery":"12"},
+      "MQTT_TOPIC": "mqtt/Switch",
+      "MQTT_EVENT": {"battery":"12"},
       "EVENT_CALENDAR": "https://example.com/own/remote.php/dav/cal/system/alerts/",
       "EVENT_SUMMARY": "Switch 1 Battery Alert",
       "EVENT_LOCATION": "Datacenter A",
