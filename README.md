@@ -62,7 +62,7 @@ Specifies details of the calendar event.
 ```
 "EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
 "EVENT_SUMMARY": "Buy Milk",
-"EVENT_LOCATION": "1 Street\\, 23456 City\\, United Country",
+"EVENT_LOCATION": "1 Street\\, 23456 City\\, Country",
 "EVENT_GEO": "1.2489458;103.8343056",
 "EVENT_CATEGORY": "Tasks",
 "EVENT_URL": "http://buymoremilk.com",
