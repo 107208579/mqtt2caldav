@@ -36,7 +36,7 @@ Specifies the MQTT server connection.
 <br />
 
 
-**CALDAV Server**  
+**CALDAV**  
 Specifies the CalDAV server connection.
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
@@ -47,7 +47,7 @@ Specifies the CalDAV server connection.
 <br />
 
 
-**MQTT Trigger**   
+**MQTT**   
 Specifies the MQTT topic and MQTT event string to trigger a calendar event creation.
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch",
@@ -57,7 +57,7 @@ Specifies the MQTT topic and MQTT event string to trigger a calendar event creat
 <br />
 
 
-**EVENT Details**  
+**EVENT**  
 Specifies details of the calendar event.
 ```
 "EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
@@ -73,7 +73,7 @@ Specifies details of the calendar event.
 <br />
 
 
-**EVENT Details :: Time Zone**  
+**EVENT :: Time Zone**  
 Specifies the time zone in which calendar events are created.
 ```
 "EVENT_TIMEZONE"
@@ -83,7 +83,7 @@ Specifies the time zone in which calendar events are created.
 <br />
  
  
-**EVENT Details :: Trigger**  
+**EVENT :: Trigger**  
 Specifies a calendar event alarm.
 ```
 "EVENT_TRIGGER"
@@ -96,7 +96,7 @@ Specifies a calendar event alarm.
 <br />
 
 
-**EVENT Details :: Seconds**  
+**EVENT :: Seconds**  
 Specifies if the calendar event start time and calendar event end time will have seconds set.
 ```
 "EVENT_SECONDS"
@@ -107,7 +107,7 @@ Specifies if the calendar event start time and calendar event end time will have
 <br />
 
 
-**EVENT Details :: Rounding**  
+**EVENT :: Rounding**  
 Specifies if the calendar event start time has minutes rounded up or down to the closest defined value.
 ```
 "EVENT_ROUNDING"
@@ -120,7 +120,7 @@ Specifies if the calendar event start time has minutes rounded up or down to the
 <br />
 
 
-**EVENT Details :: Duration**  
+**EVENT :: Duration**  
 Specifies the calendar event duration in minutes.
 ```
 "EVENT_DURATION"
