@@ -48,7 +48,7 @@ Specifies the CalDAV server connection.
 
 
 **MQTT Trigger**   
-Specifies the MQTT topic and event action to trigger an event creation.
+Specifies the MQTT topic and event action to trigger a calendar event creation.
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
 "MQTT_EVENT": {"action":"on"},
@@ -73,7 +73,7 @@ Specifies details of the calendar event.
 
 
 **EVENT Details :: Time Zone**  
-Specifies the time zone in which events are created.
+Specifies the time zone in which calendar events are created.
 ```
 "EVENT_TIMEZONE"
 ```
@@ -83,7 +83,7 @@ Specifies the time zone in which events are created.
  
  
 **EVENT Details :: Trigger**  
-Specifies an event alarm trigger.
+Specifies a calendar event alarm trigger.
 ```
 "EVENT_TRIGGER"
 ```
@@ -96,7 +96,7 @@ Specifies an event alarm trigger.
 
 
 **EVENT Details :: Seconds**  
-Specifies if event start time (DTSTART) and event end time (DTEND) will have seconds set.
+Specifies if the calendar event start time (DTSTART) and calendar event end time (DTEND) will have seconds set.
 ```
 "EVENT_SECONDS"
 ```
@@ -107,7 +107,7 @@ Specifies if event start time (DTSTART) and event end time (DTEND) will have sec
 
 
 **EVENT Details :: Rounding**  
-Specifies if the event start time (DTSTART) has minutes rounded up or down to the closest defined value.
+Specifies if the calendar event start time (DTSTART) has minutes rounded up or down to the closest defined value.
 ```
 "EVENT_ROUNDING"
 ```
@@ -120,7 +120,7 @@ Specifies if the event start time (DTSTART) has minutes rounded up or down to th
 
 
 **EVENT Details :: Duration**  
-Specifies the event duration in minutes.
+Specifies the calendar event duration in minutes.
 ```
 "EVENT_DURATION"
 ```
