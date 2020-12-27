@@ -84,20 +84,20 @@ Specifies the time zone in which calendar events are created.
  
  
 **EVENT Details :: Trigger**  
-Specifies a calendar event alarm trigger.
+Specifies a calendar event alarm.
 ```
 "EVENT_TRIGGER"
 ```
 * "" → No alert will be set or configured  
-* "0" → Alert will trigger at event start time (DTSTART)  
-* "15" → Alert will trigger 15 minutes before event start time (DTSTART)  
+* "0" → Alert will trigger at event start time
+* "15" → Alert will trigger 15 minutes before event start time
 * ...
 <br />
 <br />
 
 
 **EVENT Details :: Seconds**  
-Specifies if the calendar event start time (DTSTART) and calendar event end time (DTEND) will have seconds set.
+Specifies if the calendar event start time and calendar event end time will have seconds set.
 ```
 "EVENT_SECONDS"
 ```
@@ -108,7 +108,7 @@ Specifies if the calendar event start time (DTSTART) and calendar event end time
 
 
 **EVENT Details :: Rounding**  
-Specifies if the calendar event start time (DTSTART) has minutes rounded up or down to the closest defined value.
+Specifies if the calendar event start time has minutes rounded up or down to the closest defined value.
 ```
 "EVENT_ROUNDING"
 ```
@@ -125,9 +125,9 @@ Specifies the calendar event duration in minutes.
 ```
 "EVENT_DURATION"
 ```
-* "1" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 12:35:00
-* "10" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 12:44:00
-* "120" → If event start time (DTSTART) is 12:34:00, event end time (DTEND) will be set to 14:34:00
+* "1" → If event start time is 12:34:00, event end time will be set to 12:35:00
+* "10" → If event start time is 12:34:00, event end time will be set to 12:44:00
+* "120" → If event start time is 12:34:00, event end time will be set to 14:34:00
 * ...
 <br />
 <br />
