@@ -48,9 +48,9 @@ Specifies the CalDAV server connection.
 
 
 **MQTT Trigger**   
-Specifies the MQTT topic and event action to trigger a calendar event creation.
+Specifies the MQTT topic and MQTT event string to trigger a calendar event creation.
 ```
-"MQTT_TOPIC": "mqtt/Main_Switch_Left_Button",
+"MQTT_TOPIC": "mqtt/Main_Switch",
 "MQTT_EVENT": {"action":"on"},
 ```
 <br />
@@ -68,6 +68,7 @@ Specifies details of the calendar event.
 "EVENT_URL": "http://buymoremilk.com",
 "EVENT_DESCRIPTION": "Dont forget to buy fresh milk!",
 ```
+* List of calendar properties → https://<span></span>icalendar.org/RFC-Specifications/iCalendar-RFC-5545/
 <br />
 <br />
 
@@ -130,3 +131,4 @@ Specifies the calendar event duration in minutes.
 * ...
 <br />
 <br />
+
