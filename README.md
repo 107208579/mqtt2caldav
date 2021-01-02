@@ -73,6 +73,17 @@ Specifies details of the calendar event.
 <br />
 
 
+**EVENT :: Transparency**  
+Specifies if a calendar event is listed as busy or free.
+```
+"EVENT_TRANSP"
+```
+* "OPAQUE" → Busy
+* "TRANSPARENT" → Free 
+<br />
+<br />
+
+
 **EVENT :: Time Zone**  
 Specifies the time zone in which calendar events are created.
 ```
