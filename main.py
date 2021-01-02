@@ -79,6 +79,7 @@ DESCRIPTION:"""+trigger['EVENT_DESCRIPTION']+"""
 URL;VALUE=URI:"""+trigger['EVENT_URL']+"""
 SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
 GEO:"""+trigger['EVENT_GEO']+"""
+TRANSP:"""+trigger['EVENT_TRANSP']+"""
 CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
 CREATED:"""+start_time
             end_event = """
