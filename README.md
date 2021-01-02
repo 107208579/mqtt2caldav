@@ -85,7 +85,7 @@ Specifies if a calendar event is listed as busy or free.
 
 
 **EVENT :: Time Zone**  
-Specifies the time zone in which calendar events are created.
+Specifies the time zone in which a calendar event is created.
 ```
 "EVENT_TIMEZONE"
 ```
