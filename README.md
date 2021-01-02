@@ -19,6 +19,8 @@ mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https:/
 ## Requirements  
 * MQTT Server Connection
 * CALDAV Server Connection
+* [paho-mqtt](https://pypi.org/project/paho-mqtt/)
+* [caldav](https://pypi.org/project/caldav/)
 <br />
 <br />
 
