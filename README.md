@@ -39,7 +39,7 @@ Specifies the MQTT server connection.
 
 
 **CALDAV Server**  
-Specifies the CalDAV server connection.
+Specifies the CALDAV server connection.
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
 "CALDAV_USERNAME": "username",
