@@ -9,7 +9,7 @@ os.makedirs(LOG_DIR, exist_ok=True)
 log_fn = os.path.join(LOG_DIR, 'mqtt2caldav.log')
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(message)s',
-                    datefmt='%Y/%m/%d %H:%M:%S',
+                    datefmt='%Y-%m-%d %H:%M:%S',
                     filename=log_fn)
 logger = logging.getLogger('MQTT-CALDAV')
 
