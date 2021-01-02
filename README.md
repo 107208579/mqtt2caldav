@@ -108,7 +108,7 @@ Specifies a calendar event alarm.
 
 
 **EVENT :: Seconds**  
-Specifies if the calendar event start time and calendar event end time will have seconds set.
+Specifies if a calendar event start time and calendar event end time will have seconds set.
 ```
 "EVENT_SECONDS"
 ```
@@ -119,7 +119,7 @@ Specifies if the calendar event start time and calendar event end time will have
 
 
 **EVENT :: Rounding**  
-Specifies if the calendar event start time has minutes rounded up or down to the closest defined value.
+Specifies if a calendar event start time has minutes rounded up or down to the closest defined value.
 ```
 "EVENT_ROUNDING"
 ```
@@ -132,7 +132,7 @@ Specifies if the calendar event start time has minutes rounded up or down to the
 
 
 **EVENT :: Duration**  
-Specifies the calendar event duration in minutes.
+Specifies a calendar event duration in minutes.
 ```
 "EVENT_DURATION"
 ```
