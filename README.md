@@ -31,7 +31,7 @@ The configuration file is located under `config/config.json` and holds some samp
 <br />
 
 
-**MQTT Server**  
+**MQTT :: Connection**  
 Specifies the MQTT server connection.
 ```
 "MQTT_SERVER_ADDRESS": "localhost",
@@ -43,7 +43,7 @@ Specifies the MQTT server connection.
 <br />
 
 
-**CALDAV Server**  
+**CALDAV :: Connection**  
 Specifies the CALDAV server connection.
 ```
 "CALDAV_SERVER_ADDRESS": "https://server.com/remote.php/dav/calendars/user",
@@ -54,7 +54,7 @@ Specifies the CALDAV server connection.
 <br />
 
 
-**MQTT**   
+**MQTT :: Trigger**   
 Specifies the MQTT topic and MQTT event string to trigger a calendar event creation.
 ```
 "MQTT_TOPIC": "mqtt/Main_Switch",
