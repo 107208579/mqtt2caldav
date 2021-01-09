@@ -80,7 +80,7 @@ URL;VALUE=URI:"""+trigger['EVENT_URL']+"""
 SUMMARY:"""+trigger['EVENT_SUMMARY']+"""
 GEO:"""+trigger['EVENT_GEO']+"""
 TRANSP:"""+trigger['EVENT_TRANSP']+"""
-CATEGORY:"""+trigger['EVENT_CATEGORY']+"""
+CATEGORIES:"""+trigger['EVENT_CATEGORIES']+"""
 CREATED:"""+start_time
             end_event = """
 END:VEVENT
