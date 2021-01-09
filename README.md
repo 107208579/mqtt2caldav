@@ -7,13 +7,11 @@ This project reads MQTT events and creates predefined CALDAV events.
 <br />
 
 
-
 ## Licence 
 mqtt2caldav is licensed under the [GNU GENERAL PUBLIC LICENSE Version 3](https://github.com/107208579/mqtt2caldav/blob/main/LICENSE.gpl).
 <br />
 <br />
 <br />
-
 
 
 ## Requirements  
@@ -64,18 +62,65 @@ Specifies the MQTT topic and MQTT event string to trigger a calendar event creat
 <br />
 
 
-**EVENT**  
-Specifies details of the calendar event.
+**EVENT :: Calendar**  
+Specifies the calendar in which a calendar event is created.
 ```
 "EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
+```
+<br />
+<br />
+
+
+**EVENT :: Summary**  
+Specifies the event title.
+```
 "EVENT_SUMMARY": "Buy Milk",
+```
+<br />
+<br />
+
+
+**EVENT :: Location**  
+Specifies the event location.
+```
 "EVENT_LOCATION": "1 Street\\, 23456 City\\, Country",
+```
+<br />
+<br />
+
+
+**EVENT :: Geo**  
+Specifies the event location in latitude and longitude GPS coordinates.
+```
 "EVENT_GEO": "1.2489458;103.8343056",
-"EVENT_CATEGORIES": "Tasks",
+```
+<br />
+<br />
+
+
+**EVENT :: Categories**  
+Specifies the category/categories for a calendar event.
+```
+"EVENT_CATEGORIES": "Appointment",
+```
+<br />
+<br />
+
+
+**EVENT :: URL**  
+Specifies a Uniform Resource Locator (URL) associated with a calendar event.
+```
 "EVENT_URL": "http://buymoremilk.com",
+```
+<br />
+<br />
+
+
+**EVENT :: Description**  
+Specifies the description for a calendar event.
+```
 "EVENT_DESCRIPTION": "Dont forget to buy fresh milk!",
 ```
-* List of calendar properties → https://<span></span>icalendar.org/RFC-Specifications/iCalendar-RFC-5545/
 <br />
 <br />
 
@@ -149,4 +194,3 @@ Specifies a calendar event duration in minutes.
 * ...
 <br />
 <br />
-
