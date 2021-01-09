@@ -71,7 +71,7 @@ Specifies details of the calendar event.
 "EVENT_SUMMARY": "Buy Milk",
 "EVENT_LOCATION": "1 Street\\, 23456 City\\, Country",
 "EVENT_GEO": "1.2489458;103.8343056",
-"EVENT_CATEGORY": "Tasks",
+"EVENT_CATEGORIES": "Tasks",
 "EVENT_URL": "http://buymoremilk.com",
 "EVENT_DESCRIPTION": "Dont forget to buy fresh milk!",
 ```
