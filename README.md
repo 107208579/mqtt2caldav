@@ -194,3 +194,10 @@ Specifies a calendar event duration in minutes.
 * ...
 <br />
 <br />
+
+
+## Log File  
+The log file is located under `logs/mqtt2caldav.log`. 
+<br />
+<br />
+
