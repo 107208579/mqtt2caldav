@@ -127,8 +127,8 @@ Specifies a Uniform Resource Locator (URL) associated with a calendar event.
 ```
 "EVENT_URL"
 ```
-* "http://buymoremilk.com"
-* "http://eatmorechicken.com"
+* "http:<span></span>//buymoremilk.com"
+* "http:<span></span>//eatmorechicken.com"
 * ...
 <br />
 <br />
@@ -221,4 +221,3 @@ Specifies a calendar event duration in minutes.
 The log file is located under `logs/mqtt2caldav.log`. 
 <br />
 <br />
-
