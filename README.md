@@ -80,7 +80,8 @@ Specifies the event title.
 "EVENT_SUMMARY"
 ```
 * "Meeting"
-* "Buy Milk"
+* "Buy More Milk"
+* "Procrastination"
 * ...
 <br />
 <br />
@@ -92,7 +93,8 @@ Specifies the event location.
 "EVENT_LOCATION"
 ```
 * "Home"
-* "1 Street\\, 23456 City\\, Country"
+* "Annwn Regio"
+* "1 Street\\\\, 23456 City\\\\, Country"
 * ...
 <br />
 <br />
@@ -103,6 +105,7 @@ Specifies the event location in latitude and longitude GPS coordinates.
 ```
 "EVENT_GEO"
 ```
+* "41.726931;-49.948253"
 * "1.2489458;103.8343056"
 * "-73.0499998;-13.416665"
 * ...
@@ -115,6 +118,7 @@ Specifies the category/categories for a calendar event.
 ```
 "EVENT_CATEGORIES"
 ```
+* "Visit"
 * "Meeting"
 * "Appointment"
 * ...
@@ -127,6 +131,7 @@ Specifies a Uniform Resource Locator (URL) associated with a calendar event.
 ```
 "EVENT_URL"
 ```
+* "http:<span></span>//something.com"
 * "http:<span></span>//buymoremilk.com"
 * "http:<span></span>//eatmorechicken.com"
 * ...
@@ -140,6 +145,7 @@ Specifies the description for a calendar event.
 "EVENT_DESCRIPTION"
 ```
 * "Meeting with Homer"
+* "Take over the world!"
 * "Dont forget to buy fresh milk!"
 * ...
 <br />
@@ -158,11 +164,14 @@ Specifies if a calendar event is listed as busy or free.
 
 
 **EVENT :: Time Zone**  
-Specifies the time zone in which a calendar event is created.
+Specifies the timezone in which a calendar event is created. List of tz timezones→ https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
 "EVENT_TIMEZONE"
 ```
-* List of time zones → https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
+* "Etc/GMT+12"
+* "Europe/London"
+* "Asia/Singapore"
+* ...
 <br />
 <br />
  
