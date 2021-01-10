@@ -67,7 +67,7 @@ Specifies the calendar in which a calendar event is created.
 ```
 "EVENT_CALENDAR"
 ```
-* "localhost"
+* "localhost/dav/calendar/work"
 * "http:<span></span>//server.com/remote.php/dav/calendars/user/home"
 * ...
 <br />
