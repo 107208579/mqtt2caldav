@@ -65,8 +65,11 @@ Specifies the MQTT topic and MQTT event string to trigger a calendar event creat
 **EVENT :: Calendar**  
 Specifies the calendar in which a calendar event is created.
 ```
-"EVENT_CALENDAR": "https://server.com/remote.php/dav/calendars/user/todo",
+"EVENT_CALENDAR"
 ```
+* "localhost"
+* "http:<span></span>//server.com/remote.php/dav/calendars/user/home"
+* ...
 <br />
 <br />
 
@@ -74,8 +77,11 @@ Specifies the calendar in which a calendar event is created.
 **EVENT :: Summary**  
 Specifies the event title.
 ```
-"EVENT_SUMMARY": "Buy Milk",
+"EVENT_SUMMARY"
 ```
+* "Meeting"
+* "Buy Milk"
+* ...
 <br />
 <br />
 
@@ -83,8 +89,11 @@ Specifies the event title.
 **EVENT :: Location**  
 Specifies the event location.
 ```
-"EVENT_LOCATION": "1 Street\\, 23456 City\\, Country",
+"EVENT_LOCATION"
 ```
+* "Home"
+* "1 Street\\, 23456 City\\, Country"
+* ...
 <br />
 <br />
 
@@ -92,8 +101,11 @@ Specifies the event location.
 **EVENT :: Geo**  
 Specifies the event location in latitude and longitude GPS coordinates.
 ```
-"EVENT_GEO": "1.2489458;103.8343056",
+"EVENT_GEO"
 ```
+* "1.2489458;103.8343056"
+* "-73.0499998;-13.416665"
+* ...
 <br />
 <br />
 
@@ -101,8 +113,11 @@ Specifies the event location in latitude and longitude GPS coordinates.
 **EVENT :: Categories**  
 Specifies the category/categories for a calendar event.
 ```
-"EVENT_CATEGORIES": "Appointment",
+"EVENT_CATEGORIES"
 ```
+* "Meeting"
+* "Appointment"
+* ...
 <br />
 <br />
 
@@ -110,8 +125,11 @@ Specifies the category/categories for a calendar event.
 **EVENT :: URL**  
 Specifies a Uniform Resource Locator (URL) associated with a calendar event.
 ```
-"EVENT_URL": "http://buymoremilk.com",
+"EVENT_URL"
 ```
+* "http://buymoremilk.com"
+* "http://eatmorechicken.com"
+* ...
 <br />
 <br />
 
@@ -119,8 +137,11 @@ Specifies a Uniform Resource Locator (URL) associated with a calendar event.
 **EVENT :: Description**  
 Specifies the description for a calendar event.
 ```
-"EVENT_DESCRIPTION": "Dont forget to buy fresh milk!",
+"EVENT_DESCRIPTION"
 ```
+* "Meeting with Homer"
+* "Dont forget to buy fresh milk!"
+* ...
 <br />
 <br />
 
