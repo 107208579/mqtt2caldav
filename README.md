@@ -88,7 +88,7 @@ Specifies the event title.
 
 
 **EVENT :: Location**  
-Specifies the event location.
+Specifies the event location. Use a double backslash to escape a comma.
 ```
 "EVENT_LOCATION"
 ```
