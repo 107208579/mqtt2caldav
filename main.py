@@ -58,7 +58,7 @@ def on_message(client, userdata, message):
                 now_datetime = roundTime(datetime.now(), timedelta(minutes=int(trigger['EVENT_ROUNDING'])))
             end_datetime = now_datetime + timedelta(minutes=int(trigger['EVENT_DURATION']))
 
-            if trigger['EVENT_SECONDS'] == 'False' or trigger['EVENT_SECONDS'] == 'false':
+            if trigger['EVENT_SECONDS'] == 'FALSE' or trigger['EVENT_SECONDS'] == 'False' or trigger['EVENT_SECONDS'] == 'false':
                 start_time = now_datetime.strftime('%Y%m%dT%H%M00')
                 end_time = end_datetime.strftime('%Y%m%dT%H%M00')
             else:
