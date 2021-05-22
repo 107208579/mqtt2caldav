@@ -63,7 +63,7 @@ Specifies the MQTT topic and MQTT event string to trigger a calendar event creat
 
 
 **EVENT :: Calendar**  
-Specifies the calendar in which a calendar event is created.
+Specifies the calendar location in which a calendar event is created.
 ```
 "EVENT_CALENDAR"
 ```
