@@ -119,7 +119,7 @@ Specifies the category/categories for a calendar event. This field is commonly u
 ```
 * "Visit"
 * "Meeting"
-* "Beachy Beach\\\, Sandy Sand\\\\, Sunny Sun"
+* "Beachy Beach\\\\, Sandy Sand\\\\, Sunny Sun"
 * ...
 <br />
 <br />
