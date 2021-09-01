@@ -93,7 +93,7 @@ Specifies the event location. Use a double backslash to escape a comma.
 ```
 * "Home"
 * "Annwn Regio"
-* "1 Street\\\\, 23456 City\\\\, Country"
+* "1 Street\\, 23456 City\\, Country"
 * ...
 <br />
 <br />
@@ -119,7 +119,7 @@ Specifies the category/categories for a calendar event. This field is commonly u
 ```
 * "Visit"
 * "Meeting"
-* "Beachy Beach\\\\, Sandy Sand\\\\, Sunny Sun"
+* "Beachy Beach\\, Sandy Sand\\, Sunny Sun"
 * ...
 <br />
 <br />
