@@ -113,13 +113,13 @@ Specifies the event location in latitude and longitude GPS coordinates.
 
 
 **EVENT :: Categories**  
-Specifies the category/categories for a calendar event.
+Specifies the category/categories for a calendar event. This field is commonly used for 'Tags' in various calendar apps.
 ```
 "EVENT_CATEGORIES"
 ```
 * "Visit"
 * "Meeting"
-* "Appointment"
+* "Beachy Beach\\\\, Sandy Sand\\\\, Sunny Sun"
 * ...
 <br />
 <br />
