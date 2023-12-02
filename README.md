@@ -62,7 +62,7 @@ Specifies the MQTT topic and MQTT event string to trigger a calendar event creat
 
 
 **EVENT :: Calendar**  
-Specifies the calendar location in which a calendar event is created.
+Specifies the calendar name in which a calendar event is created.
 ```
 "EVENT_CALENDAR"
 ```
@@ -100,7 +100,7 @@ Specifies the event location. Use a double backslash to escape a comma.
 
 
 **EVENT :: Geo**  
-Specifies the event location in latitude and longitude GPS coordinates.
+Specifies the event location in latitude and longitude coordinates.
 ```
 "EVENT_GEO"
 ```
@@ -126,7 +126,7 @@ Specifies the category/categories for a calendar event. This field is commonly u
 
 
 **EVENT :: URL**  
-Specifies a Uniform Resource Locator (URL) associated with a calendar event.
+Specifies a link associated with a calendar event.
 ```
 "EVENT_URL"
 ```
@@ -163,7 +163,7 @@ Specifies if a calendar event is listed as busy or free.
 
 
 **EVENT :: Time Zone**  
-Specifies the timezone in which a calendar event is created. List of tz timezones→ https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
+Specifies the timezone the calendar event is created. List of timezones→ https://<span></span>en.wikipedia.org/wiki/List_of_tz_database_time_zones
 ```
 "EVENT_TIMEZONE"
 ```
@@ -189,7 +189,7 @@ Specifies a calendar event alarm.
 
 
 **EVENT :: Seconds**  
-Specifies if a calendar event start time and calendar event end time will have seconds set.
+Specifies if a calendar event start time and end time will have seconds set.
 ```
 "EVENT_SECONDS"
 ```
@@ -204,9 +204,9 @@ Specifies if a calendar event start time has minutes rounded up or down to the c
 ```
 "EVENT_ROUNDING"
 ```
-* "1" → 12:42:29 rounds to 12:42:00 and 12:42:30 rounds to 12:43:00
-* "5" → 12:42:29 rounds to 12:40:00 and 12:42:30 rounds to 12:45:00 
-* "30" → 12:42:29 rounds to 12:30:00 and 12:42:30 rounds to 13:00:00
+* "1" → 12:42:29 rounds down to 12:42:00 and 12:42:30 rounds up to 12:43:00
+* "5" → 12:42:29 rounds down to 12:40:00 and 12:42:30 rounds up to 12:45:00 
+* "30" → 12:42:29 rounds down to 12:30:00 and 12:42:30 rounds up to 13:00:00
 * ...
 <br />
 <br />
@@ -217,9 +217,9 @@ Specifies a calendar event duration in minutes.
 ```
 "EVENT_DURATION"
 ```
-* "1" → If event start time is 12:34:00, event end time will be set to 12:35:00
-* "10" → If event start time is 12:34:00, event end time will be set to 12:44:00
-* "120" → If event start time is 12:34:00, event end time will be set to 14:34:00
+* "1" → If event start time is 12:34:00, event end time will be set to 12:35:00 (+1 minute)
+* "10" → If event start time is 12:34:00, event end time will be set to 12:44:00 (+10 minutes)
+* "120" → If event start time is 12:34:00, event end time will be set to 14:34:00 (+120 minutes)
 * ...
 <br />
 <br />
