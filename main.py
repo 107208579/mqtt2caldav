@@ -101,8 +101,8 @@ END:VALARM
 
                 my_event = event_calendar.save_event(str_event)
     except Exception as e:
-        logger.error(f"[ERROR] Exception in on_message: {e}")
-        print(f"[ERROR] Exception in on_message: {e}")
+        logger.error(f"[ERRR] Exception      | on_message: {e}")
+        print(f"[ERRR] Exception      | on_message: {e}")
 
 if __name__ == '__main__':
 
@@ -146,7 +146,7 @@ if __name__ == '__main__':
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
     except Exception as e:
-        logger.error(f"[ERROR] Exception in main loop: {e}")
-        print(f"[ERROR] Exception in main loop: {e}")
+        logger.error(f"[ERRR] Exception      | main loop: {e}")
+        print(f"[ERRR] Exception      | main loop: {e}")
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
