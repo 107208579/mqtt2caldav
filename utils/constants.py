@@ -20,6 +20,6 @@ with open(CONF_DIR+'/'+config_file) as json_file:
     CALDAV_USERNAME = json_data['CALDAV_SERVER']['CALDAV_USERNAME']
     CALDAV_PASSWORD = json_data['CALDAV_SERVER']['CALDAV_PASSWORD']
 
-    VOLTAGE_WARNING = json_data['MQTT_DEVICES']['VOLTAGE_WARNING']
+    VOLTAGE_WARNING_LOW = json_data['MQTT_DEVICES']['VOLTAGE_WARNING_LOW']
 
     TRIGGERS = json_data['TRIGGERS']
