@@ -13,7 +13,7 @@
   },
 
   "MQTT_DEVICES":{
-      "VOLTAGE_WARNING": 2600
+      "VOLTAGE_WARNING": "2600"
   },
 
   "TRIGGERS": [
