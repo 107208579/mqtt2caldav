@@ -12,10 +12,6 @@
     "CALDAV_PASSWORD": "password"
   },
 
-  "MQTT_DEVICES":{
-      "VOLTAGE_WARNING_LOW": "2600"
-  },
-
   "TRIGGERS": [
     {
       "MQTT_TOPIC": "mqtt/0x00124b001f8ab0cd",
