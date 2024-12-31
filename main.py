@@ -101,8 +101,8 @@ END:VALARM
 
                 my_event = event_calendar.save_event(str_event)
     except Exception as e:
-        logger.error(f"[ERRR] Exception      | on_message: {e}")
-        print(f"[ERRR] Exception      | on_message: {e}")
+        logger.error(f"[ERRR] Exception | on_message: {e}")
+        print(f"[ERRR] Exception | on_message: {e}")
 
 if __name__ == '__main__':
 
