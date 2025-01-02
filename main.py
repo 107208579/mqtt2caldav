@@ -19,7 +19,7 @@ def roundTime(dt=None, dateDelta=timedelta(minutes=1)):
     if dt is None:
         dt = datetime.now()
     seconds = (dt - dt.min).seconds
-    rounding = (seconds+roundTo/2) // roundTo * roundTo
+    rounding = (seconds + roundTo/2) // roundTo * roundTo
     return dt + timedelta(0, rounding-seconds, -dt.microsecond)
     # https://stackoverflow.com/questions/3463930/how-to-round-the-minute-of-a-datetime-object
 
@@ -45,10 +45,17 @@ def on_message(client, userdata, message):
         print(f"[MQTT] Event Received | {message.topic} | {message.payload.decode('ASCII')}")
 
         mqtt_event = json.loads(message.payload.decode('ASCII'))
+
         for trigger in TRIGGERS:
             if trigger['MQTT_TOPIC'] == message.topic and all((k in mqtt_event and mqtt_event[k] == v) for k, v in trigger['MQTT_EVENT'].items()):
                 print(f"[MQTT] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
                 logger.info(f"[MQTT] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
+
+                if "action" in mqtt_event:
+                    event_location = trigger['EVENT_LOCATION'].replace('\\,', ',')
+                    log_message = f"[Z2M]  Event Sent     | {message.topic} | {{\"event_summary\":\"{trigger['EVENT_SUMMARY']}\",\"event_location\":\"{event_location}\",\"event_duration\":\"{trigger['EVENT_DURATION']}\"}}"
+                    logger.info(log_message)
+                    print(log_message)
 
                 if trigger['EVENT_ROUNDING'] == '' and trigger['EVENT_ROUNDING'] == '0':
                     now_datetime = datetime.now()
@@ -101,13 +108,13 @@ END:VALARM
 
                 my_event = event_calendar.save_event(str_event)
     except Exception as e:
-        logger.error(f"[ERRR] Exception | on_message: {e}")
-        print(f"[ERRR] Exception | on_message: {e}")
+        logger.error(f"[ERR] Exception | on_message: {e}")
+        print(f"[ERR] Exception | on_message: {e}")
 
 if __name__ == '__main__':
 
 
-    
+
 ### Connect CalDAV Client ##############################################################
     global cal_client
     try:
@@ -146,7 +153,7 @@ if __name__ == '__main__':
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
     except Exception as e:
-        logger.error(f"[ERRR] Exception      | main loop: {e}")
-        print(f"[ERRR] Exception      | main loop: {e}")
+        logger.error(f"[ERR] Exception | main loop: {e}")
+        print(f"[ERR] Exception | main loop: {e}")
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
