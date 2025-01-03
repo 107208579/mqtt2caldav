@@ -41,19 +41,19 @@ def on_connect(client, userdata, flags, rc):
 ### FUNCTION :: Action MQTT Message ####################################################
 def on_message(client, userdata, message):
     try:
-        logger.info(f"[MQTT] Event Received | {message.topic} | {message.payload.decode('ASCII')}")
-        print(f"[MQTT] Event Received | {message.topic} | {message.payload.decode('ASCII')}")
+        logger.info(f"[M2C] Event Received | {message.topic} | {message.payload.decode('ASCII')}")
+        print(f"[M2C] Event Received | {message.topic} | {message.payload.decode('ASCII')}")
 
         mqtt_event = json.loads(message.payload.decode('ASCII'))
 
         for trigger in TRIGGERS:
             if trigger['MQTT_TOPIC'] == message.topic and all((k in mqtt_event and mqtt_event[k] == v) for k, v in trigger['MQTT_EVENT'].items()):
-                print(f"[MQTT] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
-                logger.info(f"[MQTT] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
+                print(f"[M2C] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
+                logger.info(f"[M2C] Event Matched  | {message.topic} | {message.payload.decode('ASCII')}")
 
                 if "action" in mqtt_event:
                     event_location = trigger['EVENT_LOCATION'].replace('\\,', ',')
-                    log_message = f"[Z2M]  Event Sent     | {message.topic} | {{\"event_summary\":\"{trigger['EVENT_SUMMARY']}\",\"event_location\":\"{event_location}\",\"event_duration\":\"{trigger['EVENT_DURATION']}\"}}"
+                    log_message = f"[M2C] Event Sent     | {message.topic} | {{\"event_summary\":\"{trigger['EVENT_SUMMARY']}\",\"event_location\":\"{event_location}\",\"event_duration\":\"{trigger['EVENT_DURATION']}\"}}"
                     logger.info(log_message)
                     print(log_message)
 
@@ -105,8 +105,15 @@ END:VALARM
                     str_event = main_event + alarm_event + end_event
                 else:
                     str_event = main_event + end_event
+                try:
+                    my_event = event_calendar.save_event(str_event)
+                    logger.info(f'[DAV] Event Created  | {message.topic} | {{"event_url":"{my_event.url}"}}')
+                    print(f'[DAV] Event Created  | {message.topic} | {{"event_url":"{my_event.url}"}}')
 
-                my_event = event_calendar.save_event(str_event)
+                except Exception as e:
+                    logger.error(f'[DAV] Error Response | {{"caldav_response":"{message.topic} | {e}"}}')
+                    print(f'[DAV] Error Response | {{"caldav_response":"{message.topic} | {e}"}}')
+
     except Exception as e:
         logger.error(f"[ERR] Exception | on_message: {e}")
         print(f"[ERR] Exception | on_message: {e}")
@@ -122,15 +129,15 @@ if __name__ == '__main__':
         my_principal = cal_client.principal()
         calendars = my_principal.calendars()
         if calendars:
-            logger.info(f"[CALDAV] Server Connection Successful | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}")
-            print(f"[CALDAV] Server Connection Successful | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}")
+            logger.info(f"[DAV] Server Connection Successful | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}")
+            print(f"[DAV] Server Connection Successful | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}")
             for c in calendars:
-                print(f"[CALDAV] {c.name:<20} {c.url}")
+                print(f"[DAV] {c.name:<20} {c.url}")
         else:
-            print("[CALDAV] Server Connection Successful | 0 Calendar")
+            print("[DAV] Server Connection Successful | 0 Calendar")
     except AuthorizationError:
-        logger.error(f'[CALDAV] Server Connection Failed | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}')
-        print(f'[CALDAV] Server Connection Failed | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}')
+        logger.error(f'[DAV] Server Connection Failed | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}')
+        print(f'[DAV] Server Connection Failed | {CALDAV_USERNAME}@{CALDAV_SERVER_ADDRESS}')
         exit(1)
 
 
@@ -153,7 +160,7 @@ if __name__ == '__main__':
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
     except Exception as e:
-        logger.error(f"[ERR] Exception | main loop: {e}")
-        print(f"[ERR] Exception | main loop: {e}")
+        logger.error(f"[ERROR] Exception | main loop: {e}")
+        print(f"[ERROR] Exception | main loop: {e}")
         mqtt_client.disconnect()
         mqtt_client.loop_stop()
